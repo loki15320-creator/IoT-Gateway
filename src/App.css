@@ -1,0 +1,50 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+}
+
+.app-workspace {
+  display: flex;
+  flex: 1;
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* Main Viewport adjusts dynamically when sidebar expands or collapses */
+.app-main-viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height));
+  transition: margin-left var(--transition-smooth);
+}
+
+.app-main-viewport.sidebar-expanded {
+  margin-left: var(--sidebar-width-expanded);
+}
+
+.app-main-viewport.sidebar-collapsed {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+.app-main-content {
+  flex: 1;
+  padding: 28px 32px;
+  max-width: 1560px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .app-main-viewport.sidebar-expanded,
+  .app-main-viewport.sidebar-collapsed {
+    margin-left: 0 !important;
+  }
+
+  .app-main-content {
+    padding: 20px 16px;
+  }
+}

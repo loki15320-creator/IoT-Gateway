@@ -1,0 +1,431 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Header Bar */
+.dashboard-header-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-heading {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.page-subheading {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.dashboard-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Stat Cards Grid */
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(145deg, rgba(16, 27, 54, 0.9) 0%, rgba(11, 19, 40, 0.95) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35), 0 0 15px rgba(0, 240, 255, 0.08);
+}
+
+.stat-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.stat-card-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon-wrapper.cyan {
+  background-color: rgba(0, 240, 255, 0.1);
+  color: var(--cyan-primary);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+}
+
+.stat-icon-wrapper.blue {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #60A5FA;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.stat-icon-wrapper.green {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.stat-icon-wrapper.amber {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.stat-card-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+  font-family: var(--font-sans);
+}
+
+.stat-card-footer {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+}
+
+.stat-subtext {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.stat-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.stat-badge.green {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.stat-badge.cyan {
+  background-color: rgba(0, 240, 255, 0.12);
+  color: var(--cyan-primary);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+}
+
+/* Analytics Row */
+.dashboard-analytics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-panel {
+  background: rgba(14, 25, 52, 0.75);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.panel-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.panel-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cyan-secondary);
+  text-decoration: none;
+}
+
+.panel-link:hover {
+  color: var(--cyan-primary);
+  text-decoration: none;
+}
+
+/* Protocol Progress Bars */
+.protocol-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.protocol-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.protocol-info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.protocol-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.protocol-count {
+  color: var(--text-muted);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-bar-fill.modbus-rtu {
+  background: linear-gradient(90deg, #8B5CF6, #A78BFA);
+}
+
+.progress-bar-fill.modbus-tcp {
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+}
+
+.progress-bar-fill.mqtt {
+  background: linear-gradient(90deg, #10B981, #34D399);
+}
+
+.progress-bar-fill.http {
+  background: linear-gradient(90deg, #F59E0B, #FBBF24);
+}
+
+.progress-bar-fill.opc-ua {
+  background: linear-gradient(90deg, #EC4899, #F472B6);
+}
+
+/* Live Pulse Badge */
+.live-pulse-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34D399;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.pulse-circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 8px #10B981;
+}
+
+/* Runtime Metrics Grid */
+.runtime-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.runtime-metric-box {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.runtime-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.runtime-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.runtime-disclaimer-card {
+  margin-top: auto;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background-color: rgba(0, 240, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  font-size: 0.78rem;
+  color: #90E0EF;
+  line-height: 1.45;
+}
+
+/* Topology Row */
+.dashboard-topology-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.topology-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topology-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.topology-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 240, 255, 0.2);
+}
+
+.topology-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.topology-serial {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cyan-primary);
+}
+
+.topology-name {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.topology-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topology-ip {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.topology-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background-color: rgba(0, 240, 255, 0.1);
+  color: var(--cyan-primary);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.topology-protocol {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #93C5FD;
+}
+
+.topology-gateway-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.empty-panel-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.empty-mini-icon {
+  color: var(--border-medium);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .dashboard-analytics-row,
+  .dashboard-topology-row {
+    grid-template-columns: 1fr;
+  }
+}

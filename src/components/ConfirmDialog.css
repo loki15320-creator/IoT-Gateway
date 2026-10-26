@@ -1,0 +1,63 @@
+.confirm-body {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.confirm-icon-wrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.confirm-icon.danger {
+  color: var(--status-error);
+}
+
+.confirm-icon.warning {
+  color: var(--status-warning);
+}
+
+.confirm-icon.info {
+  color: var(--cyan-primary);
+}
+
+.confirm-message-wrapper {
+  flex: 1;
+}
+
+.confirm-message {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+.confirm-subtext {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--status-warning);
+  display: block;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.confirm-loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
